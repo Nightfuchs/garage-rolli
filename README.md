@@ -1,16 +1,38 @@
-# React + Vite
+# Garage Rolli - Redesign (Racing Theme)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dies ist das moderne Redesign für die Webseite von **Garage Rolli**. Das Design fokussiert sich auf das Thema "Racing": Schnell, präzise und professionell, mit einem Hauch von Nostalgie und modernster Technik.
 
-Currently, two official plugins are available:
+## 🚀 Wie man die Webseite anschaut
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Da es sich um eine moderne Web-App handelt, müssen die Dateien "gebaut" oder über einen lokalen Server gestartet werden.
 
-## React Compiler
+### 1. Entwicklungsserver starten (Empfohlen zum Anschauen)
+Um die Webseite interaktiv mit allen Animationen zu sehen:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# 1. Abhängigkeiten installieren (nur beim ersten Mal)
+npm install
 
-## Expanding the ESLint configuration
+# 2. Server starten
+npm run dev
+```
+Nach dem Start wird eine URL wie `http://localhost:5173` angezeigt. Öffnen Sie diese im Browser.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2. Produktions-Dateien erstellen (Der "dist" Ordner)
+Der `dist` Ordner enthält die fertige Webseite für den Webserver. Dieser Ordner wird aus Sicherheitsgründen und für eine saubere Code-Basis nicht im Repository gespeichert, kann aber jederzeit lokal erstellt werden:
+
+```bash
+npm run build
+```
+Nach diesem Befehl erscheint der `dist` Ordner in Ihrem Projektverzeichnis.
+
+## 🛠 Technologien
+- **React 19** & **Vite**
+- **Tailwind CSS v4** (Styling)
+- **Framer Motion** (Animationen)
+- **Lucide React** (Icons)
+
+## 🏁 Design-Konzept
+- **Farben:** High-Contrast Schwarz & Weiss.
+- **Typografie:** "Barlow Condensed" für einen sportlichen, technischen Look.
+- **Inhalt:** Fokus auf Tradition (seit 1976) kombiniert mit moderner Diagnose-Technik.
