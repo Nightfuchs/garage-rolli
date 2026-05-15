@@ -55,12 +55,13 @@ const Contact = () => {
 
           <div className="h-full min-h-[400px] grayscale contrast-125 brightness-75 border border-white/10">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2730.0349127634786!2d7.447427915603487!3d46.82331357914067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e48b127811a21%3A0x10c5108ceb5fe45!2zR29mZXJzIDIzVCwgMzA4OCBSw7xlZ2dpc2JlcmcsINCo0LLQtdC50YbQsNGA0LjRjw!5e0!3m2!1sru!2sde!4v1530287274277"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2730.2241639097725!2d7.439603376856956!3d46.82119104199146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e39268393e157%3A0x286784d1685e13d1!2sGarage%20Rolli%2C%20Inh.%20Rolli%20Martin!5e0!3m2!1sde!2sde!4v1709123456789!5m2!1sde!2sde"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
+              title="Garage Rolli Standort"
             ></iframe>
           </div>
         </div>
