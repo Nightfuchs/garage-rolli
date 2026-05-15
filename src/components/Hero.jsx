@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import heroBg from '../assets/bg-ft.png';
 
 const Hero = () => {
   return (
@@ -7,7 +8,7 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-40 scale-105"
-        style={{ backgroundImage: "url('https://garage-rolli.ch/wp-content/uploads/2018/03/Header_1.jpg')" }}
+        style={{ backgroundImage: `url(${heroBg})` }}
       ></div>
 
       <div className="relative z-10 text-center px-4 max-w-5xl">
