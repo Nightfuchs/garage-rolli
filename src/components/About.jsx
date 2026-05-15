@@ -51,7 +51,7 @@ const About = () => {
               className="relative z-10"
             >
               <img
-                src="https://garage-rolli.ch/wp-content/uploads/2018/03/Home_slider_1.jpg"
+                src="/bg-ft.png"
                 alt="Garage Rolli History"
                 className="w-full h-[500px] object-cover grayscale border border-white/10"
               />

@@ -6,7 +6,7 @@ const services = [
     title: "Service/Unterhalt",
     description: "Regelmässiger Service für Ihre Sicherheit und Zuverlässigkeit.",
     icon: <Settings size={40} />,
-    img: "https://garage-rolli.ch/wp-content/uploads/2018/03/700x440.jpg"
+    img: "/unterhalt_9.jpg"
   },
   {
     title: "Diagnose/Elektronik",
