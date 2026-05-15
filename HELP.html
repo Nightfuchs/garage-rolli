@@ -124,5 +124,20 @@
         <p>Der Ordner erscheint danach sofort links in deiner Dateiliste.</p>
     </div>
 
+    <div class="card" style="border-left: 8px solid #ff9800; margin-top: 50px;">
+        <h2>⚠️ Fehler: "Ausführung von Skripts deaktiviert" (Windows)</h2>
+        <p>Falls Windows das Ausführen von <code>npm</code> verbietet, musst du es einmalig erlauben:</p>
+        <ol>
+            <li>Öffne das Startmenü, tippe <strong>PowerShell</strong> ein.</li>
+            <li>Rechtsklick darauf -> <strong>Als Administrator ausführen</strong>.</li>
+            <li>Kopiere diesen Befehl hinein und drücke Enter:</li>
+            <div class="code-block" style="background: #004a99;">
+                Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+            </div>
+            <li>Bestätige mit <strong>"Y"</strong> (oder "J").</li>
+            <li>Jetzt kannst du dein normales Terminal wieder nutzen!</li>
+        </ol>
+    </div>
+
 </body>
 </html>
