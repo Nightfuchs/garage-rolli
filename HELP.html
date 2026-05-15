@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Rolli - Hilfe: Wie starte ich die Webseite?</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f4f4f9;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        h1 { color: #000; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; }
+        h2 { color: #d32f2f; display: flex; align-items: center; }
+        .step { margin-bottom: 30px; }
+        .terminal-icon {
+            background: #2d2d2d;
+            color: #51ff00;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            display: inline-block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .os-badge {
+            background: #e0e0e0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .instruction-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        img.ui-hint {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-width: 100%;
+            display: block;
+            margin: 10px 0;
+        }
+        .code-block {
+            background: #2d2d2d;
+            color: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🚀 Hilfe: So startest du die Webseite</h1>
+
+    <div class="card">
+        <div class="step">
+            <h2>1. Das Terminal öffnen</h2>
+            <p>Ein "Terminal" ist ein Programm, in dem man Befehle eintippt. So findest du es:</p>
+
+            <p><span class="os-badge">Windows</span> Drücke die <strong>Windows-Taste</strong> und tippe <span class="terminal-icon">PowerShell</span> oder <span class="terminal-icon">cmd</span> ein. Drücke Enter.</p>
+
+            <p><span class="os-badge">Mac</span> Drücke <strong>Cmd + Leertaste</strong> und tippe <span class="terminal-icon">Terminal</span> ein. Drücke Enter.</p>
+
+            <div class="instruction-box">
+                <strong>Wichtig:</strong> Navigiere im Terminal zu diesem Ordner (mit dem Befehl <code>cd</code> gefolgt vom Pfad).
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>2. Die Webseite starten</h2>
+            <p>Sobald das Terminal im richtigen Ordner ist, tippe diese zwei Befehle nacheinander ein:</p>
+
+            <div class="code-block">
+                npm install <span style="color: #888;">(Nur beim ersten Mal nötig)</span><br>
+                npm run dev
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>3. Im Browser anschauen</h2>
+            <p>Im Terminal erscheint nun ein Link wie:</p>
+            <p><span class="terminal-icon">➜ Local: http://localhost:5173/</span></p>
+            <p>Halte <strong>Strg</strong> (oder Cmd) gedrückt und klicke auf diesen Link, oder kopiere ihn in deinen Browser.</p>
+        </div>
+    </div>
+
+    <div class="card" style="border-top: 4px solid #000;">
+        <h2>🛠 Den "dist" Ordner erstellen</h2>
+        <p>Falls du die Dateien für einen Webserver brauchst (den <code>dist</code> Ordner), tippe:</p>
+        <div class="code-block">
+            npm run build
+        </div>
+        <p>Der Ordner erscheint danach sofort links in deiner Dateiliste.</p>
+    </div>
+
+</body>
+</html>
