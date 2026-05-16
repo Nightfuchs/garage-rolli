@@ -35,17 +35,17 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-black border-b-4 border-white">
+    <nav className="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <span className="text-3xl comic-title tracking-tighter text-white">
-              GARAGE <span className="text-sin-red">ROLLI</span>
+            <span className="text-2xl modern-title tracking-tight text-white">
+              GARAGE <span className="font-light">ROLLI</span>
             </span>
           </div>
 
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-6">
+            <div className="ml-10 flex items-center space-x-8">
               {navLinks.map((link) => (
                 <div
                   key={link.name}
@@ -55,19 +55,19 @@ const Navbar = () => {
                 >
                   <a
                     href={link.href}
-                    className="text-sm uppercase comic-title hover:text-sin-red transition-colors flex items-center gap-1"
+                    className="nav-link text-xs uppercase font-bold tracking-widest text-white/70 hover:text-white flex items-center gap-1"
                   >
                     {link.name}
-                    {link.subLinks && <ChevronDown size={14} />}
+                    {link.subLinks && <ChevronDown size={12} />}
                   </a>
 
                   {link.subLinks && activeDropdown === link.name && (
-                    <div className="absolute top-full left-0 w-64 bg-black border-4 border-white mt-0 py-2 shadow-[8px_8px_0px_#e11d48]">
+                    <div className="absolute top-full left-0 w-64 bg-black border border-white/10 mt-0 py-4 shadow-2xl">
                       {link.subLinks.map((sub) => (
                         <a
                           key={sub.name}
                           href={sub.href}
-                          className="block px-4 py-2 text-xs uppercase comic-title hover:bg-sin-red hover:text-black transition-colors"
+                          className="block px-6 py-2 text-[10px] uppercase tracking-widest text-white/50 hover:text-white hover:bg-white/5 transition-colors"
                         >
                           {sub.name}
                         </a>
@@ -78,9 +78,9 @@ const Navbar = () => {
               ))}
               <a
                 href="tel:0318090682"
-                className="flex items-center gap-2 bg-sin-red text-white px-4 py-2 text-sm comic-title border-2 border-white hover:bg-white hover:text-black transition-all"
+                className="flex items-center gap-2 border border-white px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all"
               >
-                <Phone size={16} />
+                <Phone size={14} />
                 031 809 06 82
               </a>
             </div>
@@ -99,23 +99,23 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-black border-b-4 border-white px-4 pt-2 pb-6 space-y-2 overflow-y-auto max-h-screen">
+        <div className="md:hidden bg-black border-b border-white/10 px-4 pt-2 pb-8 space-y-4">
           {navLinks.map((link) => (
-            <div key={link.name}>
+            <div key={link.name} className="border-b border-white/5 pb-2">
               <a
                 href={link.href}
-                className="block text-xl comic-title uppercase py-2 text-sin-red"
+                className="block text-lg font-bold uppercase tracking-wider text-white"
                 onClick={() => !link.subLinks && setIsOpen(false)}
               >
                 {link.name}
               </a>
               {link.subLinks && (
-                <div className="pl-4 space-y-1 border-l-2 border-white/20">
+                <div className="pl-4 mt-2 space-y-2">
                   {link.subLinks.map((sub) => (
                     <a
                       key={sub.name}
                       href={sub.href}
-                      className="block text-sm comic-title uppercase py-1 text-white/70"
+                      className="block text-xs uppercase tracking-widest text-white/40"
                       onClick={() => setIsOpen(false)}
                     >
                       {sub.name}
@@ -127,9 +127,9 @@ const Navbar = () => {
           ))}
           <a
             href="tel:0318090682"
-            className="flex items-center justify-center gap-2 bg-sin-red text-white px-4 py-4 comic-title border-2 border-white mt-4"
+            className="flex items-center justify-center gap-2 border border-white text-white px-4 py-4 text-sm font-bold uppercase tracking-widest"
           >
-            <Phone size={20} />
+            <Phone size={18} />
             031 809 06 82
           </a>
         </div>

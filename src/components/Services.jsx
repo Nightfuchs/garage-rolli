@@ -5,98 +5,100 @@ const services = [
   {
     id: "service-unterhalt",
     title: "Service/Unterhalt",
-    description: "Der regelmäßige Service und Unterhalt Ihres Fahrzeuges ist wichtig für Ihre Sicherheit.",
-    icon: <Settings size={40} />,
+    description: "Regelmäßiger Service und fachgerechter Unterhalt für Ihre Sicherheit.",
+    icon: <Settings size={32} />,
     img: "https://garage-rolli.ch/wp-content/uploads/2018/03/700x440.jpg"
   },
   {
     id: "diagnose",
     title: "Diagnose/Elektronik",
-    description: "Modernstes Diagnose Equipment für präzise Fehlersuche bei allen Marken.",
-    icon: <Cpu size={40} />,
+    description: "Modernste Computer-Diagnose für präzise Fehlersuche bei allen Modellen.",
+    icon: <Cpu size={32} />,
     img: "https://garage-rolli.ch/wp-content/uploads/2018/03/Diagnostic_2_700x440.jpg"
   },
   {
     id: "motoren",
     title: "Motoren Reparatur",
-    description: "Revisionen und Reparaturen für moderne Motoren und Oldtimer.",
-    icon: <Zap size={40} />,
+    description: "Professionelle Revisionen und Instandsetzungen für alle Motorentypen.",
+    icon: <Zap size={32} />,
     img: "https://garage-rolli.ch/wp-content/uploads/2018/03/Tuning_700x440.jpg"
   },
   {
     id: "klima",
     title: "Klimaservice",
-    description: "Wartung und Reparatur für ein optimales Innenraumklima.",
-    icon: <Wind size={40} />,
+    description: "Wartung und Desinfektion für ein gesundes Klima in Ihrem Fahrzeug.",
+    icon: <Wind size={32} />,
     img: "https://garage-rolli.ch/wp-content/uploads/2015/04/slider5.jpg"
   },
   {
     id: "automaten",
     title: "Automatenservice",
-    description: "Professionelle Wartung und Spülung von Automatikgetrieben.",
-    icon: <Activity size={40} />,
+    description: "Spülung und Wartung von Automatikgetrieben nach Herstellervorgaben.",
+    icon: <Activity size={32} />,
     img: "https://garage-rolli.ch/wp-content/uploads/2018/03/Header_1.jpg"
   },
   {
     id: "mfk",
     title: "MFK Bereitstellung",
-    description: "Gründliche Vorbereitung für eine sorgenfreie Prüfung beim Strassenverkehrsamt.",
-    icon: <ShieldCheck size={40} />,
+    description: "Komplette Vorbereitung und Durchführung der Motorfahrzeugkontrolle.",
+    icon: <ShieldCheck size={32} />,
     img: "https://garage-rolli.ch/wp-content/uploads/2018/03/Header_3.jpg"
   },
   {
     id: "lenkgeometrie",
     title: "Lenkgeometrie",
-    description: "Präzise Einstellung des Fahrwerks für weniger Verschleiss und mehr Sicherheit.",
-    icon: <Disc size={40} />,
+    description: "Elektronische Achsvermessung für optimalen Geradeauslauf.",
+    icon: <Disc size={32} />,
     img: "https://garage-rolli.ch/wp-content/uploads/2018/03/Header_2.jpg"
   },
   {
     id: "occasionen",
     title: "Occasionen",
-    description: "Geprüfte Fahrzeuge mit Garantie für Ihren Fahrspass.",
-    icon: <Car size={40} />,
+    description: "Geprüfte Gebrauchtwagen mit Qualitäts-Zertifikat und Garantie.",
+    icon: <Car size={32} />,
     img: "https://garage-rolli.ch/wp-content/uploads/2018/03/Home_slider_1.jpg"
   }
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-black px-4 scroll-mt-20">
+    <section id="services" className="py-32 bg-black px-4 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16 border-l-8 border-sin-red pl-8">
-          <h2 className="text-5xl md:text-7xl comic-title mb-4">SERVICES</h2>
-          <p className="text-xl noir-text text-white/70">ALLES AUS EINER HAND. PRÄZISE. SCHNELL. NOIR.</p>
+        <div className="mb-20 text-center">
+          <span className="text-xs font-bold tracking-[0.4em] text-white/40 uppercase mb-4 block">Expertise</span>
+          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight">Unsere Leistungen</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
           {services.map((service, index) => (
             <motion.div
               key={index}
               id={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="group comic-panel bg-black overflow-hidden scroll-mt-24"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: index * 0.05 }}
+              className="group bg-black p-8 hover:bg-[#0a0a0a] transition-all duration-500 scroll-mt-24"
             >
-              <div className="h-48 overflow-hidden relative border-b-4 border-white">
+              <div className="h-48 mb-8 overflow-hidden relative">
                 <img
                   src={service.img}
                   alt={service.title}
-                  className="w-full h-full object-cover sin-city-filter group-hover:scale-110 transition-all duration-700"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
                 />
-                <div className="absolute inset-0 bg-sin-red/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
-              <div className="p-6">
-                <div className="mb-4 text-sin-red">{service.icon}</div>
-                <h3 className="text-2xl comic-title mb-3 group-hover:text-sin-red transition-colors">{service.title}</h3>
-                <p className="text-white noir-text text-sm leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                <button className="comic-title text-xs border-2 border-white px-4 py-2 hover:bg-sin-red hover:text-white transition-all uppercase">
-                  Anfragen
-                </button>
+              <div className="mb-6 text-white/40 group-hover:text-white transition-colors">
+                {service.icon}
               </div>
+              <h3 className="text-lg font-bold text-white mb-4 uppercase tracking-widest">{service.title}</h3>
+              <p className="text-white/50 text-sm leading-relaxed font-light mb-8 h-12">
+                {service.description}
+              </p>
+              <a
+                href="#contact"
+                className="inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-white border-b border-white/20 pb-1 group-hover:border-white transition-all"
+              >
+                Mehr erfahren
+              </a>
             </motion.div>
           ))}
         </div>

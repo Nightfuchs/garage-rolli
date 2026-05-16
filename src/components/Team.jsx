@@ -15,59 +15,67 @@ const team = [
 
 const Team = () => {
   return (
-    <section id="team" className="py-24 bg-black px-4 border-t-8 border-white">
+    <section id="team" className="py-32 bg-black px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16 text-right">
-          <h2 className="text-5xl md:text-7xl comic-title mb-4">UNSER <span className="text-sin-red">TEAM</span></h2>
-          <p className="text-xl noir-text text-white/70">DIE GESICHTER HINTER DER PRÄZISION.</p>
+        <div className="mb-20">
+          <span className="text-xs font-bold tracking-[0.4em] text-white/40 uppercase mb-4 block">Menschen</span>
+          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight">Unser Team</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
           {team.map((member, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="comic-panel flex flex-col md:flex-row items-center bg-black overflow-hidden"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: index * 0.1 }}
+              className="group bg-black overflow-hidden flex flex-col md:flex-row items-stretch"
             >
-              <div className="w-full md:w-1/2 h-80 overflow-hidden border-r-4 border-white">
+              <div className="w-full md:w-1/2 aspect-square overflow-hidden">
                 <img
                   src={member.img}
                   alt={member.name}
-                  className="w-full h-full object-cover sin-city-filter"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
                 />
               </div>
-              <div className="w-full md:w-1/2 p-8">
-                <h3 className="text-4xl comic-title mb-2 text-sin-red">{member.name}</h3>
-                <p className="text-xl noir-text text-white font-bold mb-4">{member.role}</p>
-                <div className="h-1 w-20 bg-white"></div>
+              <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                <h3 className="text-2xl font-black text-white uppercase tracking-tighter mb-2">{member.name}</h3>
+                <p className="text-xs font-bold text-white/40 uppercase tracking-[0.2em]">{member.role}</p>
+                <div className="mt-8 h-px w-12 bg-white/20 group-hover:w-24 group-hover:bg-white transition-all duration-500"></div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div id="reviews" className="mt-24 p-12 border-8 border-white bg-black relative">
-           <div className="absolute -top-6 left-10 bg-sin-red text-white px-6 py-2 comic-title text-2xl border-4 border-white">
-            REVIEWS
+        {/* Testimonial */}
+        <div id="reviews" className="mt-32 max-w-4xl mx-auto text-center px-4">
+           <div className="mb-8 flex justify-center">
+             <div className="h-12 w-px bg-white/20"></div>
            </div>
-           <div className="space-y-8">
-             <div className="italic noir-text text-2xl text-white">
-                "Ihr Jungs macht einen tollen Job. Ich fahre seit fast fünf Jahren mit meinem VW-Bus zu Garage-Rolli. Ich bekomme immer tollen Service und die besten Preise. Mach weiter so."
-                <div className="mt-4 text-sin-red comic-title text-xl">— Sergej Stöckli, CEO Gartenbijoux GmbH</div>
-             </div>
-           </div>
+           <blockquote className="text-2xl md:text-4xl font-light text-white/80 leading-tight italic">
+              "Ihr Jungs macht einen tollen Job. Ich fahre seit fast fünf Jahren mit meinem VW-Bus zu Garage-Rolli. Ich bekomme immer tollen Service und die besten Preise."
+           </blockquote>
+           <cite className="mt-12 block not-italic">
+              <span className="text-sm font-bold text-white uppercase tracking-[0.3em] block mb-2">Sergej Stöckli</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">CEO Gartenbijoux GmbH</span>
+           </cite>
         </div>
 
-        <div id="faq" className="mt-24">
-          <h2 className="text-4xl comic-title mb-8 border-b-4 border-white inline-block">FAQ</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-6 border-4 border-white">
-              <h4 className="comic-title text-sin-red mb-2">Reparieren Sie alle Marken?</h4>
-              <p className="noir-text text-white">Ja, wir sind spezialisiert auf die Wartung und Reparatur aller Fahrzeugmarken.</p>
+        {/* FAQ Section */}
+        <div id="faq" className="mt-40 border-t border-white/10 pt-20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+            <div>
+              <h2 className="text-xs font-bold text-white/40 uppercase tracking-[0.5em]">FAQ</h2>
             </div>
-            <div className="p-6 border-4 border-white">
-              <h4 className="comic-title text-sin-red mb-2">Bieten Sie MFK Bereitstellung an?</h4>
-              <p className="noir-text text-white">Absolut. Wir bereiten Ihr Fahrzeug gründlich für die Prüfung vor.</p>
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+                <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-sm">Reparieren Sie alle Marken?</h4>
+                <p className="text-white/50 text-sm font-light leading-relaxed">Ja, wir sind spezialisiert auf die Wartung und Reparatur aller Fahrzeugmarken. Durch modernste Diagnosegeräte können wir herstellerübergreifend arbeiten.</p>
+              </div>
+              <div>
+                <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-sm">Bieten Sie MFK Bereitstellung an?</h4>
+                <p className="text-white/50 text-sm font-light leading-relaxed">Absolut. Wir bereiten Ihr Fahrzeug gründlich für die Prüfung vor und übernehmen auf Wunsch auch die Vorführung beim Strassenverkehrsamt.</p>
+              </div>
             </div>
           </div>
         </div>

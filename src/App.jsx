@@ -19,7 +19,7 @@ function App() {
 
       <footer className="py-12 border-t-8 border-white text-center bg-black">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="comic-title text-4xl text-white mb-4">GARAGE <span className="text-sin-red">ROLLI</span></div>
+          <div className="comic-title text-4xl text-white mb-4">GARAGE <span className="text-white">ROLLI</span></div>
           <p className="noir-text text-white/50 text-sm">© 2025 GARAGE ROLLI RÜEGGISBERG. SIN CITY EDITION.</p>
         </div>
       </footer>
