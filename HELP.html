@@ -116,12 +116,17 @@
     </div>
 
     <div class="card" style="border-top: 4px solid #000;">
-        <h2>🛠 Den "dist" Ordner erstellen</h2>
-        <p>Falls du die Dateien für einen Webserver brauchst (den <code>dist</code> Ordner), tippe:</p>
-        <div class="code-block">
-            npm run build
+        <h2>🛠 Auf den Webserver hochladen (Deployment)</h2>
+        <p>Da deine aktuelle Seite auf WordPress basiert, musst du diese ersetzen:</p>
+        <ol>
+            <li>Tippe im Terminal: <span class="terminal-icon">npm run build</span></li>
+            <li>Es entsteht ein Ordner namens <strong>dist</strong>.</li>
+            <li>Sichere deine alten WordPress-Dateien auf dem Server in einen Backup-Ordner.</li>
+            <li>Lade den <strong>Inhalt</strong> des <code>dist</code>-Ordners per FTP (z.B. FileZilla) in das Hauptverzeichnis deines Servers (meist <code>public_html</code> oder <code>www</code>) hoch.</li>
+        </ol>
+        <div class="instruction-box">
+            <strong>Tipp:</strong> Erstelle eine Datei namens <code>.htaccess</code> im Hauptverzeichnis des Servers für korrektes Routing (siehe meine Nachricht im Chat).
         </div>
-        <p>Der Ordner erscheint danach sofort links in deiner Dateiliste.</p>
     </div>
 
     <div class="card" style="border-left: 8px solid #ff9800; margin-top: 50px;">
