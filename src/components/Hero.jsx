@@ -3,48 +3,58 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Background Image with Overlay */}
+    <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
+      {/* Background with Comic Filter */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-40 scale-105"
+        className="absolute inset-0 z-0 bg-cover bg-center sin-city-filter opacity-60"
         style={{ backgroundImage: "url('/top_neu.jpg')" }}
       ></div>
 
-      <div className="relative z-10 text-center px-4 max-w-5xl">
+      {/* Halftone Overlay */}
+      <div className="absolute inset-0 z-1 halftone-overlay"></div>
+
+      <div className="relative z-10 text-left px-4 max-w-7xl w-full">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
+          className="bg-black/40 p-8 md:p-12 inline-block border-8 border-white shadow-[15px_15px_0px_#e11d48]"
         >
-          <h2 className="text-xl md:text-2xl uppercase tracking-[0.3em] mb-4 text-white/70">Rüeggisberg</h2>
-          <h1 className="text-6xl md:text-9xl racing-italic mb-6 leading-none">
-            Speed.<br/>
-            Precision.<br/>
-            Passion.
+          <h2 className="text-2xl md:text-3xl comic-title mb-4 text-white">RÜEGGISBERG</h2>
+          <h1 className="text-5xl md:text-9xl comic-title mb-6 leading-none">
+            AUTOREPARATUR<br/>
+            <span className="text-sin-red">SEIT 1976</span>
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 font-light tracking-wide">
-            Die Werkstatt für alle Marken in Ihrer Nähe. Autoreparaturen mit höchster Präzision seit 1976.
+          <p className="text-xl md:text-3xl max-w-2xl mb-10 text-white noir-text font-bold">
+            DIE WERKSTATT FÜR ALLE MARKEN IN IHRER NÄHE.<br/>
+            PRÄZISION TRIFFT NOIR.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6">
             <a
               href="#contact"
-              className="group flex items-center justify-center gap-3 bg-white text-black px-8 py-4 racing-italic text-lg hover:bg-white/90 transition-all"
+              className="group flex items-center justify-center gap-3 bg-sin-red text-white px-8 py-5 comic-title text-2xl border-4 border-white hover:bg-white hover:text-black transition-all"
             >
-              Termin vereinbaren
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+              TERMIN VEREINBAREN
+              <ArrowRight className="group-hover:translate-x-2 transition-transform" />
             </a>
             <a
               href="#services"
-              className="flex items-center justify-center px-8 py-4 border border-white/30 text-white racing-italic text-lg hover:bg-white/10 transition-all"
+              className="flex items-center justify-center px-8 py-5 border-4 border-white text-white comic-title text-2xl hover:bg-sin-red transition-all"
             >
-              Unsere Services
+              UNSERE SERVICES
             </a>
           </div>
         </motion.div>
       </div>
 
-      {/* Decorative Speed Lines */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-10"></div>
+      {/* Comic Book Speed Lines Overlay */}
+      <div className="absolute top-0 right-0 w-full h-full pointer-events-none opacity-20">
+        <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="0" y1="0" x2="100" y2="100" stroke="white" strokeWidth="0.1" />
+          <line x1="10" y1="0" x2="110" y2="100" stroke="white" strokeWidth="0.1" />
+          <line x1="-10" y1="0" x2="90" y2="100" stroke="white" strokeWidth="0.1" />
+        </svg>
+      </div>
     </div>
   );
 };
