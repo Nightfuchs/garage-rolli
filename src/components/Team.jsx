@@ -2,14 +2,44 @@ import { motion } from 'framer-motion';
 
 const team = [
   {
-    name: "Ulrich Rolli",
-    role: "Gründer / Inhaber",
-    img: "https://garage-rolli.ch/wp-content/uploads/2018/03/Home_slider_3.jpg"
+    name: "Josua Rolli",
+    role: "Chef",
+    img: "https://garage-rolli.ch/wp-content/uploads/2015/04/Josua.jpg"
   },
   {
-    name: "Das Team",
-    role: "Spezialisten für alle Marken",
+    name: "Ueli Rolli",
+    role: "Chef und Gründer",
+    img: "https://garage-rolli.ch/wp-content/uploads/2015/04/Ueli.jpg"
+  },
+  {
+    name: "Athanasius Beyeler",
+    role: "Automobilmechatroniker",
+    img: "https://garage-rolli.ch/wp-content/uploads/2023/12/Athanasius_Beyeler.jpg"
+  },
+  {
+    name: "Timo Beck",
+    role: "Lehrling",
+    img: "https://garage-rolli.ch/wp-content/uploads/2023/12/Timo_Beck.jpg"
+  },
+  {
+    name: "Lukas Hostettler",
+    role: "Lehrling",
+    img: "https://garage-rolli.ch/wp-content/uploads/2023/12/LL.jpg"
+  },
+  {
+    name: "Monika Rolli",
+    role: "Büromanagement",
+    img: "https://garage-rolli.ch/wp-content/uploads/2015/04/Monika_4.jpg"
+  },
+  {
+    name: "Garage Rolli Team",
+    role: "Spezialist für alle Marken",
     img: "https://garage-rolli.ch/wp-content/uploads/2018/03/Home_slider_2.jpg"
+  },
+  {
+    name: "Experten-Service",
+    role: "Qualität & Präzision",
+    img: "https://garage-rolli.ch/wp-content/uploads/2018/03/Home_slider_3.jpg"
   }
 ];
 
@@ -22,26 +52,26 @@ const Team = () => {
           <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight">Unser Team</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
           {team.map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-black overflow-hidden flex flex-col md:flex-row items-stretch"
+              className="group bg-black overflow-hidden flex flex-col items-stretch"
             >
-              <div className="w-full md:w-1/2 aspect-square overflow-hidden">
+              <div className="w-full aspect-square overflow-hidden">
                 <img
                   src={member.img}
                   alt={member.name}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
                 />
               </div>
-              <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
-                <h3 className="text-2xl font-black text-white uppercase tracking-tighter mb-2">{member.name}</h3>
-                <p className="text-xs font-bold text-white/40 uppercase tracking-[0.2em]">{member.role}</p>
-                <div className="mt-8 h-px w-12 bg-white/20 group-hover:w-24 group-hover:bg-white transition-all duration-500"></div>
+              <div className="w-full p-8 flex flex-col justify-center">
+                <h3 className="text-xl font-black text-white uppercase tracking-tighter mb-2 leading-tight">{member.name}</h3>
+                <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em]">{member.role}</p>
+                <div className="mt-6 h-px w-8 bg-white/20 group-hover:w-16 group-hover:bg-white transition-all duration-500"></div>
               </div>
             </motion.div>
           ))}

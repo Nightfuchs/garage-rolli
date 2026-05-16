@@ -5,6 +5,8 @@
   --color-brand-white: #ffffff;
   --color-brand-gray: #1a1a1a;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-racing: "Barlow Condensed", system-ui, sans-serif;
+  --font-retro: "Special Elite", cursive;
 }
 
 body {
@@ -15,8 +17,14 @@ body {
 }
 
 .modern-title {
+  font-family: var(--font-racing);
   font-weight: 800;
   letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.comic-title {
+  font-family: var(--font-retro);
   text-transform: uppercase;
 }
 

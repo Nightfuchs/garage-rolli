@@ -19,9 +19,9 @@ const Hero = () => {
           <span className="text-xs md:text-sm font-bold tracking-[0.5em] text-white/50 mb-6 block uppercase">
             Rüeggisberg • Bern
           </span>
-          <h1 className="text-5xl md:text-8xl font-black mb-8 leading-tight tracking-tighter text-white">
-            PRÄZISION <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">SEIT 1976</span>
+          <h1 className="text-5xl md:text-8xl font-black mb-8 leading-tight tracking-tighter text-white uppercase">
+            SPEED. PRECISION. <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">PASSION.</span>
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-12 text-white/60 leading-relaxed font-light">
             Die Werkstatt für alle Marken in Ihrer Nähe. <br className="hidden md:block" />
