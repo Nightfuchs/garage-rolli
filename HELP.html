@@ -125,7 +125,13 @@
             <li>Lade den <strong>Inhalt</strong> des <code>dist</code>-Ordners per FTP (z.B. FileZilla) in das Hauptverzeichnis deines Servers (meist <code>public_html</code> oder <code>www</code>) hoch.</li>
         </ol>
         <div class="instruction-box">
-            <strong>Tipp:</strong> Erstelle eine Datei namens <code>.htaccess</code> im Hauptverzeichnis des Servers für korrektes Routing (siehe meine Nachricht im Chat).
+            <strong>⚠️ Hilfe! Kein "dist" Ordner erstellt?</strong>
+            <ol>
+                <li>Prüfe, ob du im richtigen Ordner bist. Tippe <code>dir</code> ein - du musst <code>package.json</code> sehen.</li>
+                <li>Tippe zuerst <code>npm install</code> ein und warte bis es fertig ist.</li>
+                <li>Versuche es mit: <code>npx vite build</code></li>
+                <li>Prüfe auf Fehlermeldungen (roter Text) im Terminal.</li>
+            </ol>
         </div>
     </div>
 
