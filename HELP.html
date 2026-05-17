@@ -115,23 +115,37 @@
         </div>
     </div>
 
-    <div class="card" style="border-top: 4px solid #000;">
-        <h2>🛠 Auf den Webserver hochladen (Deployment)</h2>
-        <p>Da deine aktuelle Seite auf WordPress basiert, musst du diese ersetzen:</p>
-        <ol>
-            <li>Tippe im Terminal: <span class="terminal-icon">npm run build</span></li>
-            <li>Es entsteht ein Ordner namens <strong>dist</strong>.</li>
-            <li>Sichere deine alten WordPress-Dateien auf dem Server in einen Backup-Ordner.</li>
-            <li>Lade den <strong>Inhalt</strong> des <code>dist</code>-Ordners per FTP (z.B. FileZilla) in das Hauptverzeichnis deines Servers (meist <code>public_html</code> oder <code>www</code>) hoch.</li>
-        </ol>
-        <div class="instruction-box">
-            <strong>⚠️ Hilfe! Kein "dist" Ordner erstellt?</strong>
+    <div class="card" style="border-top: 4px solid #000; background-color: #fffdf0;">
+        <h2>🛠 EXTREM WICHTIG: Den "dist" Ordner für den Webserver erstellen</h2>
+        <p>Wenn du <code>npm run build</code> eingibst und nichts passiert, folge bitte exakt diesen Schritten:</p>
+
+        <div class="step">
+            <h3>Schritt A: Den laufenden Server stoppen</h3>
+            <p>Falls du die Webseite gerade mit <code>npm run dev</code> anschaust, ist das Terminal "belegt".</p>
             <ol>
-                <li>Prüfe, ob du im richtigen Ordner bist. Tippe <code>dir</code> ein - du musst <code>package.json</code> sehen.</li>
-                <li>Tippe zuerst <code>npm install</code> ein und warte bis es fertig ist.</li>
-                <li>Versuche es mit: <code>npx vite build</code></li>
-                <li>Prüfe auf Fehlermeldungen (roter Text) im Terminal.</li>
+                <li>Klicke in das Terminal-Fenster.</li>
+                <li>Drücke <strong>Strg + C</strong> (Steuerung und C gleichzeitig) mehrmals hintereinander.</li>
+                <li>Erst wenn du wieder die Zeile <code>P:\...\garage-rolli></code> siehst, ist das Terminal bereit.</li>
             </ol>
+        </div>
+
+        <div class="step">
+            <h3>Schritt B: Die "Erzwingen"-Methode (Plan B)</h3>
+            <p>Wenn der normale Befehl nicht funktioniert, nutze diesen hier:</p>
+            <div class="code-block">
+                npm install <br>
+                npx vite build
+            </div>
+            <p><em>(Dieser Befehl umgeht viele Windows-Fehler und erstellt den Ordner direkt.)</em></p>
+        </div>
+
+        <div class="step">
+            <h3>Schritt C: Erfolgskontrolle</h3>
+            <p>Nachdem der Befehl fertig ist (es dauert ca. 10 Sekunden), <strong>muss</strong> ein Ordner namens <code>dist</code> in deinem Verzeichnis erscheinen.</p>
+            <div class="instruction-box">
+                <strong>Was kopiere ich auf den Server?</strong><br>
+                Öffne den Ordner <code>dist</code>. Kopiere den <strong>Inhalt</strong> (assets, index.html, grafik.png etc.) per FTP auf deinen Webserver.
+            </div>
         </div>
     </div>
 
